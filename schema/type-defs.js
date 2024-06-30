@@ -2,11 +2,12 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type User {
-    id: ID
+    id: ID!
     name: String
     username: String
     age: Int
     nationality: String
+    gender: Gender!
     friends: [User!]
     favoriteMovies: [Movie!]
   }
@@ -23,6 +24,12 @@ const typeDefs = gql`
     user(id: ID!): User
     movies: [Movie!]!
     movie(id: ID!): Movie
+  }
+
+  enum Gender {
+    MALE
+    FEMALE
+    OTHER
   }
 `;
 

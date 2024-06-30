@@ -5,6 +5,7 @@ const UserList = [
       username: "john",
       age: 20,
       nationality: "CANADA",
+      gender: "MALE",
       friends: [
         {
           id: 2,
@@ -12,6 +13,7 @@ const UserList = [
           username: "PedroTech",
           age: 20,
           nationality: "BRAZIL",
+          gender: "MALE",
         },
         {
           id: 5,
@@ -19,6 +21,7 @@ const UserList = [
           username: "kelly2019",
           age: 5,
           nationality: "CHILE",
+          gender: "FEMALE",
         },
       ]
     },
@@ -28,6 +31,7 @@ const UserList = [
       username: "PedroTech",
       age: 20,
       nationality: "BRAZIL",
+      gender: "MALE",
     },
     {
       id: 3,
@@ -35,6 +39,7 @@ const UserList = [
       username: "cameron",
       age: 25,
       nationality: "INDIA",
+      gender: "FEMALE",
       friends: [
         {
           id: 2,
@@ -42,6 +47,7 @@ const UserList = [
           username: "PedroTech",
           age: 20,
           nationality: "BRAZIL",
+          gender: "MALE",
         },
       ],
     },
@@ -51,6 +57,7 @@ const UserList = [
       username: "rafe123",
       age: 60,
       nationality: "GERMANY",
+      gender: "MALE",
     },
     {
       id: 5,
@@ -58,6 +65,7 @@ const UserList = [
       username: "kelly2019",
       age: 5,
       nationality: "CHILE",
+      gender: "FEMALE",
     },
   ];
   
