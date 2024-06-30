@@ -28,6 +28,33 @@ const resolvers = {
       return MovieList.filter((movie) => favoriteMovies.includes(movie.id));
     },
   },
+
+  Mutation: {
+    // Users
+    createUser(_, { input }) {
+      console.log(input);
+      const newUser = input;
+      const lastId = UserList[UserList.length - 1].id;
+      newUser.id = lastId + 1;
+      UserList.push(newUser);
+      console.log(UserList);
+
+      return UserList.find((user) => user.id === Number(newUser.id));
+    },
+
+    updateUser(_, { id, input }) {
+      let index = UserList.findIndex((user) => user.id === Number(id));
+      UserList[index] = { ...UserList[index], ...input };
+      return UserList[index];
+    },
+
+    deleteUser(_, { id }) {
+      let index = UserList.findIndex((user) => user.id === Number(id));
+      if (index === -1) return "User not found";
+      UserList.splice(index, 1);
+      return "User deleted";
+    },
+  },
 };
 
 module.exports = { resolvers };
