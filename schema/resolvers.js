@@ -32,13 +32,8 @@ const resolvers = {
   Mutation: {
     // Users
     createUser(_, { input }) {
-      console.log(input);
-      const newUser = input;
-      const lastId = UserList[UserList.length - 1].id;
-      newUser.id = lastId + 1;
+      const newUser = { id: UserList[UserList.length - 1].id + 1, ...input };
       UserList.push(newUser);
-      console.log(UserList);
-
       return UserList.find((user) => user.id === Number(newUser.id));
     },
 
