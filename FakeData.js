@@ -20,7 +20,7 @@ const UserList = [
           age: 5,
           nationality: "CHILE",
         },
-      ],
+      ]
     },
     {
       id: 2,
@@ -87,5 +87,33 @@ const UserList = [
       isInTheaters: false,
     },
   ];
+
+  const MoviePreferences = [
+    {
+      id: 1,
+      user_id: 1,
+      movie_id: 1,
+    },
+    {
+      id: 2,
+      user_id: 1,
+      movie_id: 2,
+    },
+    {
+      id: 3,
+      user_id: 1,
+      movie_id: 3,
+    },
+    {
+      id: 4,
+      user_id: 2,
+      movie_id: 1,
+    },
+    {
+      id: 5,
+      user_id: 4,
+      movie_id: 3,
+    },
+  ];
   
-  module.exports = { UserList, MovieList };
+  module.exports = { UserList, MovieList, MoviePreferences };
