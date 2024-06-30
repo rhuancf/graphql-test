@@ -5,8 +5,8 @@ const resolvers = {
     users() {
       return UserList;
     },
-    user(_, { id }) {
-      return UserList.find((user) => user.id == id);
+    user(_, {id}) {
+      return UserList.find((user) => user.id === id);
     },
     movies() {
       return MovieList;

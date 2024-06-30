@@ -2,7 +2,7 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
     type User {
-        id: ID
+        id: Int
         name: String
         username: String
         age: Int
@@ -11,7 +11,7 @@ const typeDefs = gql`
     }
 
     type Movie {
-        id: ID
+        id: Int
         name: String
         yearOfPublication: Int
         isInTheaters: Boolean
@@ -19,7 +19,7 @@ const typeDefs = gql`
 
     type Query {
         users: [User!]!
-        user(id: ID!): User
+        user(id: Int!): User
         movies: [Movie!]!
     }
 `;
