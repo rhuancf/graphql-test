@@ -2,7 +2,7 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
     type User {
-        id: Int
+        id: ID
         name: String
         username: String
         age: Int
@@ -11,8 +11,8 @@ const typeDefs = gql`
     }
 
     type Movie {
-        id: Int
-        name: String
+        id: ID
+        name: String    
         yearOfPublication: Int
         isInTheaters: Boolean
     }

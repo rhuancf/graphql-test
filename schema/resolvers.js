@@ -6,7 +6,7 @@ const resolvers = {
       return UserList;
     },
     user(_, {id}) {
-      return UserList.find((user) => user.id === id);
+      return UserList.find((user) => user.id === Number(id));
     },
     movies() {
       return MovieList;
