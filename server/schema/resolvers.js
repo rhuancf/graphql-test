@@ -14,8 +14,8 @@ const resolvers = {
     movies() {
       return MovieList;
     },
-    movie(_, { id }) {
-      return MovieList.find((movie) => movie.id === Number(id));
+    movie(_, { name }) {
+      return MovieList.find((movie) => movie.name.toLowerCase() === name.toLowerCase());
     },
   },
 
