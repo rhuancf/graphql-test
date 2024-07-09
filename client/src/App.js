@@ -1,6 +1,7 @@
 import "./App.css";
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from "@apollo/client";
-import DisplayData from "./components/DisplayData";
+import UserList from "./components/UserList";
+import MovieSearch from "./components/MovieSearch";
 
 function App() {
   const client = new ApolloClient({
@@ -11,7 +12,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <DisplayData />
+        <MovieSearch />
       </div>
     </ApolloProvider>
   );
