@@ -1,5 +1,5 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "./App.css";
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from "@apollo/client";
 import Navigation from "./components/Navigation/Navigation";
 
 function App() {
