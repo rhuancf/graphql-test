@@ -14,8 +14,8 @@ const resolvers = {
     movies() {
       return MovieList;
     },
-    movie(_, { name }) {
-      return MovieList.find((movie) => movie.name.toLowerCase() === name.toLowerCase());
+    movie(_, { input }) {
+      return searchMovie(input);
     },
   },
 
@@ -51,5 +51,11 @@ const resolvers = {
     },
   },
 };
+
+function searchMovie({ id, name }) {
+  return id
+    ? MovieList.find((movie) => movie.id === Number(id))
+    : MovieList.find((movie) => movie.name.toLowerCase() === name.toLowerCase());
+}
 
 module.exports = { resolvers };
