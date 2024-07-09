@@ -18,8 +18,8 @@ const QUERY_ALL_USERS = gql`
 `;
 
 const GET_MOVIE_BY_NAME = gql`
-  query ($name: String!) {
-    movie(name: $name) {
+  query ($movieInput: SearchMovieInput) {
+    movie(input: $movieInput) {
       id
       isInTheaters
       name
@@ -36,6 +36,10 @@ function DisplayData() {
     searchMovie,
     { data: searchData, loading: searchLoading, error: searchError },
   ] = useLazyQuery(GET_MOVIE_BY_NAME);
+
+  const searchMovieHandler = () => {
+    searchMovie({ variables: { movieInput: { name: movieSearched } } });
+  };
 
   if (loading) return <div>Loading...</div>;
 
@@ -65,12 +69,9 @@ function DisplayData() {
           type="text"
           placeholder="Interstellar"
           onChange={(e) => setMovieSearched(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && searchMovieHandler()}
         ></input>
-        <button
-          onClick={() => searchMovie({ variables: { name: movieSearched } })}
-        >
-          Search Movie
-        </button>
+        <button onClick={searchMovieHandler}>Search Movie</button>
       </div>
       <div>
         {searchLoading && <p>Loading...</p>}
