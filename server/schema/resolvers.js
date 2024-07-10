@@ -58,4 +58,4 @@ function searchMovie({ id, name }) {
     : MovieList.find((movie) => movie.name.toLowerCase() === name.toLowerCase());
 }
 
-module.exports = { resolvers };
+module.exports = { resolvers, searchMovie };
