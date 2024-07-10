@@ -18,11 +18,13 @@ const QUERY_ALL_USERS = gql`
 `;
 
 function UserList() {
-  const { data, loading, error } = useQuery(QUERY_ALL_USERS);
+  const { data, loading, error, refetch } = useQuery(QUERY_ALL_USERS);
 
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>Error: {error.message}</div>;
+
+  refetch();
 
   return (
     <div>
